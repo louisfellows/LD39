@@ -18,8 +18,12 @@ app.get('/',function(req,res){
 
 console.log("get Index");
 
-server.listen(8080,function(){ // Listens to port 8081
-    console.log('Listening on '+server.address().port);
-});
+try {
+    server.listen(8080,function(){ // Listens to port 8081
+        console.log('Listening on '+server.address().port);
+    });
+} catch (err) {
+    console.log(err);
+}
 
 console.log("Running");
