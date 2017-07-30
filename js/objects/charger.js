@@ -15,6 +15,8 @@ var Charger = (function (_super) {
         return _super.call(this, game, x, y, "charger") || this;
     }
     Charger.prototype.collision = function (bike) {
+        var sfx = this.game.add.audio("charge", 10, false);
+        sfx.play();
         bike.rechargeBattery();
     };
     return Charger;

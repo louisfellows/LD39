@@ -13,7 +13,7 @@ class Scoreboard {
         this.game.add.sprite(x,y+5,image);
 
         this.text = this.game.add.text(x+16,y,"0");
-        this.text.font = 'Revalia';
+        this.text.font = 'Stalinist One';
         this.text.fontSize = 25;
         
         this.text.fill = this.getGradient(colour);
@@ -31,7 +31,7 @@ class Scoreboard {
     }
 
     displayHighscore(hiscore:number) {
-        let hi = this.game.add.text(this.text.x - 16, this.text.y + 24, "Best: " + hiscore.toString(), {font: "Revalia", fontSize: 10}); 
+        let hi = this.game.add.text(this.text.x - 16, this.text.y + 24, "Best: " + hiscore.toString(), {font: "Stalinist One", fontSize: 10}); 
         hi.fill = this.getGradient('#8888FF')
     }
 

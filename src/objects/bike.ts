@@ -11,6 +11,8 @@ class Bike extends Phaser.Sprite {
 
     coins: number;
 
+    engine: Phaser.Sound;
+
     private battery: number = 100;
     private batteryDischarge :number;
     private batteryRecharge : number;
@@ -28,6 +30,9 @@ class Bike extends Phaser.Sprite {
         this.keyboard = this.game.input.keyboard;
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.anchor = new Phaser.Point(0.5,0.5);
+
+        this.engine = this.game.add.audio('engine',10,true);
+        this.engine.play();
     }
 
     update() {
@@ -59,6 +64,11 @@ class Bike extends Phaser.Sprite {
             } else if (this.cursors.down.isDown) {
                 this.position.y += 5;
             }
+        }
+
+        this.engine.volume = Phaser.Math.min(this.speed / 20, 0.5);        
+        if (this.speed == 0) {
+            this.engine.stop();
         }
     }
 

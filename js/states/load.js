@@ -15,6 +15,7 @@ var Load = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Load.prototype.preload = function () {
+        this.game.load.image('title', 'assets/title.jpg');
         this.game.load.image('bike', 'assets/bike.png');
         this.game.load.image('road', 'assets/road.png');
         this.game.load.image('battery', 'assets/battery.png');
@@ -30,13 +31,19 @@ var Load = (function (_super) {
         this.game.load.spritesheet('button-battery', 'assets/button-battery.png', 100, 100);
         this.game.load.spritesheet('button-recharge', 'assets/button-recharge.png', 100, 100);
         this.game.load.spritesheet('button-continue', 'assets/button-continue.png', 100, 20);
+        this.game.load.spritesheet('button-start', 'assets/button-start.png', 100, 20);
         this.game.load.spritesheet('stars', 'assets/stars.png', 100, 20);
+        this.game.load.audio('engine', 'assets/BikeEngine.wav');
+        this.game.load.audio('charge', 'assets/Charge.wav');
+        this.game.load.audio('click', 'assets/Click.wav');
+        this.game.load.audio('coin', 'assets/Coin.wav');
+        this.game.load.audio('hit', 'assets/hit.wav');
         //this.game.load.script("webfont", "//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js");
     };
     Load.prototype.create = function () {
         //Load fonts, then continue!
         //this.game.state.start("Upgrade",true,false,new Params());
-        this.game.state.start("Play", true, false, new Params());
+        this.game.state.start("Title", true, false, new Params());
     };
     return Load;
 }(Phaser.State));

@@ -4,7 +4,7 @@ var Scoreboard = (function () {
         this.game = game;
         this.game.add.sprite(x, y + 5, image);
         this.text = this.game.add.text(x + 16, y, "0");
-        this.text.font = 'Revalia';
+        this.text.font = 'Stalinist One';
         this.text.fontSize = 25;
         this.text.fill = this.getGradient(colour);
     }
@@ -18,7 +18,7 @@ var Scoreboard = (function () {
         var tween = this.game.add.tween(this.text).to({ y: origY }, 1000, Phaser.Easing.Bounce.Out, true);
     };
     Scoreboard.prototype.displayHighscore = function (hiscore) {
-        var hi = this.game.add.text(this.text.x - 16, this.text.y + 24, "Best: " + hiscore.toString(), { font: "Revalia", fontSize: 10 });
+        var hi = this.game.add.text(this.text.x - 16, this.text.y + 24, "Best: " + hiscore.toString(), { font: "Stalinist One", fontSize: 10 });
         hi.fill = this.getGradient('#8888FF');
     };
     Scoreboard.prototype.getGradient = function (colour) {

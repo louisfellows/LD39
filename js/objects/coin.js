@@ -15,6 +15,8 @@ var Coin = (function (_super) {
         return _super.call(this, game, x, y, "coin") || this;
     }
     Coin.prototype.collision = function (bike) {
+        var sfx = this.game.add.audio("coin", 10, false);
+        sfx.play();
         bike.addCoin();
         this.destroy();
     };

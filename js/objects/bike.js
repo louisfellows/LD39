@@ -26,6 +26,8 @@ var Bike = (function (_super) {
         this.keyboard = this.game.input.keyboard;
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.anchor = new Phaser.Point(0.5, 0.5);
+        this.engine = this.game.add.audio('engine', 10, true);
+        this.engine.play();
     };
     Bike.prototype.update = function () {
         if (this.battery > 0) {
@@ -58,6 +60,10 @@ var Bike = (function (_super) {
             else if (this.cursors.down.isDown) {
                 this.position.y += 5;
             }
+        }
+        this.engine.volume = Phaser.Math.min(this.speed / 20, 0.5);
+        if (this.speed == 0) {
+            this.engine.stop();
         }
     };
     Bike.prototype.getBattery = function () {

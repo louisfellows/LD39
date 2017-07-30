@@ -7,6 +7,8 @@ class Coin extends Bonus {
     }
 
     collision(bike: Bike) {
+        let sfx = this.game.add.audio("coin",10,false);
+        sfx.play();
         bike.addCoin();
         this.destroy();
     }

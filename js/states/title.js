@@ -9,20 +9,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Obstacle = (function (_super) {
-    __extends(Obstacle, _super);
-    function Obstacle() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.collided = false;
-        return _this;
+var Title = (function (_super) {
+    __extends(Title, _super);
+    function Title() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Obstacle.prototype.collision = function (bike) {
-        if (!this.collided) {
-            var sfx = this.game.add.audio("hit", 10, false);
-            sfx.play();
-            bike.collision();
-            this.collided = true;
-        }
+    Title.prototype.create = function () {
+        this.game.add.image(0, 0, 'title');
+        this.game.add.button(200, 300, 'button-start', this.startGame, this, 2, 0, 1, 2);
     };
-    return Obstacle;
-}(Furniture));
+    Title.prototype.startGame = function () {
+        this.game.state.start("Play", true, false, new Params());
+    };
+    return Title;
+}(Phaser.State));

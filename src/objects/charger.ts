@@ -7,6 +7,8 @@ class Charger extends Bonus {
     }
    
     collision(bike: Bike) {
+        let sfx = this.game.add.audio("charge",10,false);
+        sfx.play();
         bike.rechargeBattery();
     }
 }

@@ -5,6 +5,7 @@ var LD39 = (function () {
         game.state.add('Load', Load);
         game.state.add('Play', Play);
         game.state.add('Upgrade', Upgrades);
+        game.state.add('Title', Title);
         game.state.start('Load');
     }
     return LD39;
@@ -16,7 +17,7 @@ window.onload = function () {
             var game = new LD39();
         },
         google: {
-            families: ['Revalia']
+            families: ['Revalia', 'Frijole', 'Stalinist One']
         }
     };
     WebFont.load(loadFonts);
