@@ -1,0 +1,13 @@
+/// <reference path="../../lib/typescript/phaser.d.ts"/>
+
+abstract class Obstacle extends Furniture {
+
+    collided: boolean = false;
+
+    collision(bike: Bike) {
+        if (!this.collided) {
+            bike.collision();
+            this.collided = true;
+        }
+    }
+}

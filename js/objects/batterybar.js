@@ -1,4 +1,4 @@
-/// <reference path="../lib/typescript/phaser.d.ts"/>
+/// <reference path="../../lib/typescript/phaser.d.ts"/>
 var BatteryBar = (function () {
     function BatteryBar(image, x, y, game) {
         this.barFull = 183;

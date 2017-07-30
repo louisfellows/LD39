@@ -1,4 +1,4 @@
-/// <reference path="../lib/typescript/phaser.d.ts"/>
+/// <reference path="../../lib/typescript/phaser.d.ts"/>
 
 class BatteryBar {  
 
