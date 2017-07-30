@@ -14,7 +14,7 @@ app.get('/',function(req,res){
 
 server.lastPlayerID = 0;
 
-server.listen(80,function(){ // Listens to port 8081
+server.listen(8080,function(){ // Listens to port 8081
     console.log('Listening on '+server.address().port);
 });
 
